@@ -13,15 +13,17 @@ app.post('/chat', async (req, res) => {
   try {
     // Save message to Supabase
     const userMessage = req.body.messages[req.body.messages.length - 1].content;
-    await fetch(`${SUPABASE_URL}/rest/v1/messages`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey': SUPABASE_KEY,
-        'Authorization': `Bearer ${SUPABASE_KEY}`
-      },
-      body: JSON.stringify({ user_message: userMessage })
-    });
+const sbRes = await fetch(`${SUPABASE_URL}/rest/v1/messages`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'apikey': SUPABASE_KEY,
+    'Authorization': `Bearer ${SUPABASE_KEY}`
+  },
+  body: JSON.stringify({ user_message: userMessage })
+});
+const sbData = await sbRes.json();
+console.log('Supabase response:', JSON.stringify(sbData));
 
     // Send to Anthropic
     const response = await fetch('https://api.anthropic.com/v1/messages', {
