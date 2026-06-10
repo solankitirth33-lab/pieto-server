@@ -7,6 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/chat', async (req, res) => {
+  console.log('User asked:', JSON.stringify(req.body.messages));
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
