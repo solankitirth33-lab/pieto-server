@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const SUPABASE_URL = 'https://qxmuapbnknjaxdayijga.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF4bXVhcGJua25qYXhkYXlpamdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwNzM5MjksImV4cCI6MjA5NjY0OTkyOX0.NlsxUoDCaVee7siYOjEfxknxUA78kYbdtb8wzTOsbr08';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF4bXVhcGJua25qYXhkYXlpamdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwNzM5MjksImV4cCI6MjA5NjY0OTkyOX0.NlsxUoDCaVe7siYOjEfxknxUA78kYbdtb8wzTOsbr08';
 
 app.post('/chat', async (req, res) => {
   try {
